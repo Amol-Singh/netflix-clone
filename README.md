@@ -31,6 +31,6 @@ A **Netflix Clone** built with modern web technologies to replicate the UI and c
 - **TypeScript (.tsx, .ts)** – Strongly typed JavaScript  
 - **Tailwind CSS** – Styling  
 
-### Backend 🖥️  
+### Backend   
 - **Node.js + Express.js** – Backend framework 
 - **MongoDB** – Database, authentication and movie data
