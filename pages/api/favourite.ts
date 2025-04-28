@@ -32,7 +32,7 @@ export default async function handler ( req : NextApiRequest, res: NextApiRespon
                 }
             });
 
-            return res.status(400).end();
+            return res.status(200).json(user);
         }
 
         if(req.method == "DELETE") {
@@ -49,14 +49,14 @@ export default async function handler ( req : NextApiRequest, res: NextApiRespon
             if(!existingMovie){
                 throw new Error("Invalid ID");
             }
-             const updateFavouriteIds = without(currentUser.favouriteIds, movieId);
+             const updatedFavouriteIds = without(currentUser.favouriteIds, movieId);
              
              const updatedUser = await prismadb.user.update({
                 where : {
-                    email : currentUser.email || "",
+                    email : currentUser.email || " ",
                 },
                 data : {
-                    favouriteIds : updateFavouriteIds,
+                    favouriteIds : updatedFavouriteIds,
                 }
              });
 

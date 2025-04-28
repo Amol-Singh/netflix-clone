@@ -13,7 +13,7 @@ export default async function handler (req : NextApiRequest, res : NextApiRespon
         const favouriteMovies = await prismadb.movie.findMany({
             where : {
                 id : {
-                    in : currentUser?.favouriteIds
+                    in : currentUser?.favouriteIds,
                 }
             }
         });
